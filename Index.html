@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JHAPALISH HUB</title>
+    <style>
+        :root {
+            --bg: #07070c;
+            --surface: #12121c;
+            --border: #1f1f30;
+            --pink: #ff0055;
+            --green: #00ff88;
+            --orange: #ff6600;
+            --text: #ffffff;
+            --muted: #8a8a9e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 12px 12px 40px 12px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 440px;
+        }
+
+        /* TOP BANNER */
+        .brand-box {
+            background: linear-gradient(135deg, rgba(255,0,85,0.15), rgba(255,102,0,0.05));
+            border: 1px solid rgba(255, 0, 85, 0.25);
+            border-radius: 20px;
+            padding: 22px 16px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .brand-title {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            background: linear-gradient(45deg, var(--pink), var(--orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-sub {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* LIVE STATUS CARD */
+        .status-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .badge-row {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(138, 138, 158, 0.1);
+            color: var(--muted);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            border: 1px solid rgba(138, 138, 158, 0.2);
+            margin-bottom: 10px;
+        }
+
+        .status-msg {
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .status-desc {
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 14px;
+        }
+
+        .main-btn {
+            background: linear-gradient(90deg, var(--pink), var(--orange));
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 13px;
+            display: block;
+            box-shadow: 0 4px 15px rgba(255, 0, 85, 0.25);
+        }
+
+        /* SECTION HEADERS */
+        .sec-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--muted);
+            margin: 20px 0 10px 4px;
+            font-weight: 700;
+        }
+
+        /* SOUNDBOARD */
+        .sound-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sound-btn-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 14px 16px;
+            border-radius: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: 0.1s ease;
+        }
+
+        .sound-btn-card:active {
+            transform: scale(0.97);
+            border-color: var(--pink);
+            background: rgba(255, 0, 85, 0.08);
+        }
+
+        .sound-txt {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .sound-subtxt {
+            font-size: 10px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .play-circle {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pink);
+            font-size: 12px;
+        }
+
+        /* GRID CARDS (DISCO & SQUAD) */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .mini-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 12px;
+        }
+
+        .mini-title {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .mini-desc {
+            font-size: 10px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        /* FOOTER LINK */
+        .footer-link {
+            background: var(--surface);
+            color: var(--text);
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            display: block;
+            margin-top: 14px;
+        }
+
+        .foot-note {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 10px;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="brand-box">
+        <h1 class="brand-title">JHAPALISH</h1>
+        <p class="brand-sub">Manish Pandey (I$H) • Community Portal</p>
+    </div>
+
+    <!-- STREAM STATUS CARD -->
+    <div class="status-card">
+        <div>
+            <span class="badge-row">💤 STATUS: OFFLINE</span>
+        </div>
+        <div class="status-title" style="display:none"></div>
+        <div class="status-msg">Catch VODs & Channel Hub</div>
+        <div class="status-desc">Tap below to check live status or watch clips.</div>
+        <a href="https://youtube.com/@Jhapalish/live" target="_blank" class="main-btn">OPEN YOUTUBE FEED</a>
+    </div>
+
+    <!-- SOUNDBOARD -->
+    <div class="sec-title">🔥 Iconic Soundboard</div>
+    <div class="sound-stack">
+        <div class="sound-btn-card" onclick="playRealAudio('kata_kata.mp3')">
+            <div>
+                <div class="sound-txt">"Kata Kata milaye jasto ni Garxa feri"</div>
+                <div class="sound-subtxt">Tap to play real audio</div>
+            </div>
+            <div class="play-circle">▶</div>
+        </div>
+
+        <div class="sound-btn-card" onclick="playRealAudio('man_ko.mp3')">
+            <div>
+                <div class="sound-txt">"Man ko chahi ramro xa ni feri"</div>
+                <div class="sound-subtxt">Tap to play real audio</div>
+            </div>
+            <div class="play-circle">▶</div>
+        </div>
+    </div>
+
+    <!-- DISCOGRAPHY -->
+    <div class="sec-title">🎵 Discography Hits</div>
+    <div class="sound-stack">
+        <div class="mini-card" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <div class="mini-title">Sadey 3</div>
+                <div class="mini-desc">Primary Hit Track</div>
+            </div>
+            <span style="font-size: 10px; color: var(--pink); font-weight: bold;">HIT</span>
+        </div>
+        <div class="mini-card" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <div class="mini-title">Gaidey Club & Jungle Ko Bhoot</div>
+                <div class="mini-desc">Collab & Track Archive</div>
+            </div>
+            <span style="font-size: 10px; color: var(--muted);">Tracks</span>
+        </div>
+    </div>
+
+    <!-- SQUAD -->
+    <div class="sec-title">👑 Squad Roster</div>
+    <div class="grid-2">
+        <div class="mini-card">
+            <div class="mini-title">WLF Kush</div>
+            <div class="mini-desc">Ankush</div>
+        </div>
+        <div class="mini-card">
+            <div class="mini-title">Keema & Zeven</div>
+            <div class="mini-desc">Streamers / Collab</div>
+        </div>
+    </div>
+
+    <a href="https://youtube.com/@jhapalishlive" target="_blank" class="footer-link">🎥 SECOND CHANNEL (@jhapalishlive)</a>
+
+    <div class="foot-note">
+        Jhapalish Community Hub • Mobile Optimized
+    </div>
+
+</div>
+
+<script>
+    function playRealAudio(filename) {
+        const audio = new Audio(filename);
+        audio.play().catch(err => {
+            alert('Upload "' + filename + '" to your GitHub repository to play audio.');
+        });
+    }
+</script>
+
+</body>
+</html>
